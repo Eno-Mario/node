@@ -2,25 +2,28 @@
 
 ## Do
 
-Add image field to planets table in the DB.
-Set POST /planets/:id/image route for file upload (planet's image).
-Store the image file locally (on disk).
-Save file path to DB (update the correct planet).
+Create users table in Postgres DB.
+Set up Passport authentication with JWT.
+Use SECRET key from .env
 
 ## Use
 
-Add image TEXT to your CREATE TABLE planets SQL query.
+Use passport and passport-jwt packages
 
-Use multer library to save files to /uploads folder.
+Create users table SQL query:
 
-Add image TEXT to CREATE TABLE planets SQL query (in your DB setup).
+DROP TABLE IF EXISTS users;
 
-Use this SQL query to update planet's image:
+CREATE TABLE users (
+id SERIAL NOT NULL PRIMARY KEY,
+username TEXT NOT NULL,
+password TEXT NOT NULL,
+token TEXT
+);
+Use dotenv package
 
-UPDATE planets
-SET image=$2
-WHERE id=$1;
+Create .env file and store SECRET key
 
 ## Check
 
-Use Postman to test the upload route (you can send a file in Postman).
+Use Postman to test the routes.
