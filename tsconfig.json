@@ -4,7 +4,7 @@
     "strict": true,
     "outDir": "./dist",
     "module": "es6",
-    "target": "ES6"
+    "target": "ES6",
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["./src/**/*.test.js"]
